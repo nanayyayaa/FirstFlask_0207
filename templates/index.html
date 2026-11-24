@@ -2,58 +2,28 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Generator Kartu Biodata</title>
+    <title>Form Input Nama</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <div class="awan awan-1"></div>
-    <div class="awan awan-2"></div>
-    <div class="awan awan-3"></div>
-
     <div class="container">
-        <div class="kotak-form">
-            <h2>Input Biodata</h2>
-            <form method="POST" action="/">
-                <label for="nama">Nama Lengkap</label>
-                <input type="text" id="nama" name="nama" placeholder="Contoh: Nana" required>
+        <h1 class="judul">Form Input Nama</h1>
 
-                <label for="nim">NIM</label>
-                <input type="text" id="nim" name="nim" placeholder="Contoh: 2300018001" required>
-
-                <label for="prodi">Program Studi</label>
-                <input type="text" id="prodi" name="prodi" placeholder="Contoh: Teknologi Informasi" required>
-
-                <label for="hobi">Hobi</label>
-                <input type="text" id="hobi" name="hobi" placeholder="Contoh: Cari uang" required>
-
-                <label for="avatar">Pilih Karakter</label>
-                <select id="avatar" name="avatar">
-                    <option value="🦄">🦄 Kuda Poni</option>
-                    <option value="🐱">🐱 Kucing</option>
-                    <option value="🐹">🐹 Hamster</option>
-                    <option value="🐰">🐰 Kelinci</option>
-                </select>
-
-                <button type="submit">Buat Kartu</button>
+        <div class="kartu">
+            <form method="POST" action="/kirim">
+                <label for="nama">Masukkan Nama:</label>
+                <input type="text" id="nama" name="nama" placeholder="Nama kamu..." required>
+                <div class="btn-wrapper">
+                    <button type="submit">Kirim</button>
+                </div>
             </form>
         </div>
 
-        {% if biodata %}
-        <div class="kartu-biodata">
-            <div class="kartu-header">
-                <h3>KARTU BIODATA</h3>
-            </div>
-            <div class="kartu-isi">
-                <div class="avatar-box">
-                    {{ biodata.avatar }}
-                </div>
-                <div class="info-text">
-                    <p><span>Nama</span>: {{ biodata.nama }}</p>
-                    <p><span>NIM</span>: {{ biodata.nim }}</p>
-                    <p><span>Prodi</span>: {{ biodata.prodi }}</p>
-                    <p><span>Hobi</span>: {{ biodata.hobi }}</p>
-                </div>
-            </div>
+        {% if nama %}
+        <div class="kartu hasil">
+            <h2>Data Berhasil Dikirim!</h2>
+            <p class="sapaan">Halo, {{ nama }}!</p>
+            <p class="sub-teks">Selamat datang di aplikasi Flask.</p>
         </div>
         {% endif %}
     </div>
