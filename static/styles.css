@@ -1,0 +1,193 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ffd6e8, #e4d4f4, #cce7ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Desain Awan */
+.awan {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    z-index: 0;
+    animation: melayang 6s ease-in-out infinite;
+}
+
+.awan::before, .awan::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+}
+
+.awan-1 {
+    width: 140px;
+    height: 45px;
+    top: 12%;
+    left: 10%;
+}
+.awan-1::before { width: 65px; height: 65px; top: -30px; left: 20px; }
+.awan-1::after { width: 50px; height: 50px; top: -20px; right: 20px; }
+
+.awan-2 {
+    width: 180px;
+    height: 55px;
+    top: 22%;
+    right: 12%;
+    animation-delay: 2s;
+}
+.awan-2::before { width: 80px; height: 80px; top: -38px; left: 30px; }
+.awan-2::after { width: 60px; height: 60px; top: -25px; right: 25px; }
+
+.awan-3 {
+    width: 120px;
+    height: 40px;
+    bottom: 15%;
+    left: 18%;
+    animation-delay: 4s;
+}
+.awan-3::before { width: 55px; height: 55px; top: -25px; left: 18px; }
+.awan-3::after { width: 45px; height: 45px; top: -18px; right: 18px; }
+
+@keyframes melayang {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+}
+
+/* Konten Utama */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    z-index: 1;
+}
+
+.kotak-form {
+    background-color: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(6px);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(160, 140, 200, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.kotak-form h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    text-align: center;
+    color: #6b5b95;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #7c6f9f;
+    margin-bottom: 5px;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 14px;
+    border: 1px solid #e0d4f7;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: #fdfbff;
+    color: #4a4a4a;
+}
+
+select {
+    cursor: pointer;
+}
+
+input[type="text"]:focus, select:focus {
+    outline: none;
+    border-color: #b58ecc;
+    box-shadow: 0 0 5px rgba(181, 142, 204, 0.4);
+}
+
+button {
+    width: 100%;
+    padding: 11px;
+    background: linear-gradient(90deg, #f3a6c8, #b59ce6, #9ac8f5);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Desain Kartu Hasil */
+.kartu-biodata {
+    background-color: rgba(255, 255, 255, 0.92);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(160, 140, 200, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.kartu-header {
+    background: linear-gradient(90deg, #f3a6c8, #b59ce6, #9ac8f5);
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+
+.kartu-header h3 {
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.kartu-isi {
+    padding: 20px;
+    color: #555;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.avatar-box {
+    width: 75px;
+    height: 75px;
+    background: linear-gradient(135deg, #ffe3f1, #e6e0ff);
+    border: 3px solid #f3a6c8;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    flex-shrink: 0;
+}
+
+.info-text p {
+    margin: 6px 0;
+    display: flex;
+}
+
+.info-text span {
+    font-weight: bold;
+    width: 55px;
+    display: inline-block;
+    color: #7c6f9f;
+}
